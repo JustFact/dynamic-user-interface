@@ -2,10 +2,10 @@ const menuButton = document.querySelectorAll(".menu-button");
 const menuButtonArray = Array.from(menuButton);
 
 for (let i = 0; i < menuButtonArray.length; i += 1) {
-  const parent = menuButtonArray[i].parentNode.className;
+  const parent = menuButtonArray[i].parentNode.id;
   let toggleDisplay = true;
   menuButtonArray[i].addEventListener("click", () => {
-    const menuItems = document.querySelectorAll(`.${parent} > .menu-item`);
+    const menuItems = document.querySelectorAll(`#${parent} > .menu-item`);
     const menuItemArray = Array.from(menuItems);
     let displayValue = "none";
     for (let j = 0; j < menuItemArray.length; j += 1) {
