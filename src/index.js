@@ -10,15 +10,14 @@ const rightLimit = slideWidth * (numberOfSlides - 1);
 
 slideLeft.addEventListener("click", () => {
   slide.scroll({
-    left: x > 0 ? (x -= slideWidth) : 0,
+    left: x > 0 ? (x -= slideWidth) : (x = rightLimit),
     behavior: "smooth",
   });
-  console.log(x);
 });
 
 slideRight.addEventListener("click", () => {
   slide.scroll({
-    left: x < rightLimit ? (x += slideWidth) : rightLimit,
+    left: x < rightLimit ? (x += slideWidth) : (x = 0),
     behavior: "smooth",
   });
 });
