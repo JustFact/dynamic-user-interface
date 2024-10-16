@@ -7,6 +7,7 @@ let x = 0;
 const slideWidth = slide.offsetWidth;
 const numberOfSlides = Math.floor(slide.childNodes.length / 2);
 const rightLimit = slideWidth * (numberOfSlides - 1);
+const slideDuration = 4000;
 
 slideLeft.addEventListener("click", () => {
   slide.scroll({
@@ -21,6 +22,13 @@ slideRight.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+setInterval(() => {
+  slide.scroll({
+    left: x < rightLimit ? (x += slideWidth) : (x = 0),
+    behavior: "smooth",
+  });
+}, slideDuration);
 
 // =========================== Menu List code =======================
 
