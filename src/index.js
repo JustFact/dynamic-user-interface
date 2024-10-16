@@ -1,3 +1,30 @@
+import "./style.css";
+
+const slide = document.querySelector(".carousel-slide");
+const slideLeft = document.querySelector(".carousel-left");
+const slideRight = document.querySelector(".carousel-right");
+let x = 0;
+const slideWidth = slide.offsetWidth;
+const numberOfSlides = Math.floor(slide.childNodes.length / 2);
+const rightLimit = slideWidth * (numberOfSlides - 1);
+
+slideLeft.addEventListener("click", () => {
+  slide.scroll({
+    left: x > 0 ? (x -= slideWidth) : 0,
+    behavior: "smooth",
+  });
+  console.log(x);
+});
+
+slideRight.addEventListener("click", () => {
+  slide.scroll({
+    left: x < rightLimit ? (x += slideWidth) : rightLimit,
+    behavior: "smooth",
+  });
+});
+
+// =========================== Menu List code =======================
+
 const menuButton = document.querySelectorAll(".menu-button");
 const menuButtonArray = Array.from(menuButton);
 

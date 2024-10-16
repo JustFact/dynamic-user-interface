@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.icon {
+  fill: black;
+  width: 32px;
+}
+
+.carousel-frame {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.carousel-arrow {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 2px 5px;
+  font-weight: 900;
+  margin: 1px 5px;
+}
+
+.carousel-frame .carousel-slide {
+  width: 640px;
+  height: 450px;
+  overflow: auto;
+  display: flex;
+}
+
+.carousel-frame .carousel-slide img {
+  width: 640px;
+}
+
+.carousel-frame .carousel-slide::-webkit-scrollbar {
+  display: none;
+}

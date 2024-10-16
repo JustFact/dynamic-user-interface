@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Name</title>
-    <style>
-      svg {
-        fill: black;
-        width: 32px;
-      }
-    </style>
   </head>
   <body>
+    <div class="carousel-frame">
+      <div class="carousel-left carousel-arrow"><</div>
+      <div class="carousel-slide">
+        <img src="bailey-zindel-NRQV-hBF10M-unsplash.jpg" />
+        <img src="kalen-emsley-Bkci_8qcdvQ-unsplash.jpg" />
+        <img src="mark-harpur-K2s_YE031CA-unsplash.jpg" />
+        <img src="pine-watt-2Hzmz15wGik-unsplash.jpg" />
+      </div>
+      <div class="carousel-right carousel-arrow">></div>
+    </div>
+
     <div id="menu-container">
       <button class="menu-button">Open</button>
       <div class="menu-item">Line 1</div>
@@ -31,12 +36,16 @@
     </div>
 
     <div id="myClass">
-      <button class="menu-button">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <div class="menu-button">
+        <svg
+          class="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
           <title>menu</title>
           <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
         </svg>
-      </button>
+      </div>
       <div class="menu-item">IS</div>
       <div class="menu-item">This</div>
       <div class="menu-item">working</div>
