@@ -20,11 +20,27 @@
 }
 
 .carousel-arrow {
-  border: 2px solid black;
+  color: antiquewhite;
+  position: absolute;
+  border: 2px solid whitesmoke;
+  background-color: rgba(240, 248, 255, 0.3);
   border-radius: 5px;
   padding: 2px 5px;
   font-weight: 900;
   margin: 1px 5px;
+}
+
+.carousel-arrow {
+  top: 3%;
+  cursor: default;
+}
+
+.carousel-arrow.carousel-left {
+  right: calc(100% - 600px);
+}
+
+.carousel-arrow.carousel-right {
+  right: calc(100% - 630px);
 }
 
 .carousel-frame .carousel-slide {
