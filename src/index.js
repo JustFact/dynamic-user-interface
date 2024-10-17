@@ -8,6 +8,10 @@ const slideWidth = slide.offsetWidth;
 const numberOfSlides = Math.floor(slide.childNodes.length / 2);
 const rightLimit = slideWidth * (numberOfSlides - 1);
 const slideDuration = 4000;
+let currentSlide = 0;
+
+const slidePoints = document.querySelectorAll(".point");
+slidePoints[0].classList.add("show");
 
 slideLeft.addEventListener("click", () => {
   slide.scroll({
@@ -24,6 +28,12 @@ slideRight.addEventListener("click", () => {
 });
 
 setInterval(() => {
+  slidePoints[currentSlide].classList.toggle("show");
+  currentSlide += 1;
+  if (currentSlide === numberOfSlides) {
+    currentSlide = 0;
+  }
+  slidePoints[currentSlide].classList.toggle("show");
   slide.scroll({
     left: x < rightLimit ? (x += slideWidth) : (x = 0),
     behavior: "smooth",

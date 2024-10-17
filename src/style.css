@@ -57,3 +57,21 @@
 .carousel-frame .carousel-slide::-webkit-scrollbar {
   display: none;
 }
+
+.carousel-frame .slide-points {
+  position: absolute;
+  left: 18%;
+  top: 25rem;
+  display: flex;
+}
+
+.carousel-frame .slide-points .point {
+  padding: 5px;
+  background-color: rgba(245, 245, 245, 0.7);
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.point.show {
+  outline: 3px solid aliceblue;
+}
