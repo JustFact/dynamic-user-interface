@@ -13,7 +13,26 @@ let currentSlide = 0;
 const slidePoints = document.querySelectorAll(".point");
 slidePoints[0].classList.add("show");
 
+function updateNextNavigators() {
+  slidePoints[currentSlide].classList.toggle("show");
+  currentSlide += 1;
+  if (currentSlide === numberOfSlides) {
+    currentSlide = 0;
+  }
+  slidePoints[currentSlide].classList.toggle("show");
+}
+
+function updatePreviousNavigators() {
+  slidePoints[currentSlide].classList.toggle("show");
+  currentSlide -= 1;
+  if (currentSlide < 0) {
+    currentSlide = numberOfSlides;
+  }
+  slidePoints[currentSlide].classList.toggle("show");
+}
+
 slideLeft.addEventListener("click", () => {
+  updatePreviousNavigators();
   slide.scroll({
     left: x > 0 ? (x -= slideWidth) : (x = rightLimit),
     behavior: "smooth",
@@ -21,6 +40,7 @@ slideLeft.addEventListener("click", () => {
 });
 
 slideRight.addEventListener("click", () => {
+  updateNextNavigators();
   slide.scroll({
     left: x < rightLimit ? (x += slideWidth) : (x = 0),
     behavior: "smooth",
@@ -28,12 +48,7 @@ slideRight.addEventListener("click", () => {
 });
 
 setInterval(() => {
-  slidePoints[currentSlide].classList.toggle("show");
-  currentSlide += 1;
-  if (currentSlide === numberOfSlides) {
-    currentSlide = 0;
-  }
-  slidePoints[currentSlide].classList.toggle("show");
+  updateNextNavigators();
   slide.scroll({
     left: x < rightLimit ? (x += slideWidth) : (x = 0),
     behavior: "smooth",
